@@ -7,9 +7,6 @@
     --a: #ff001a;
     --b: #e86976;
     --c: #f4061e;
-    --g: #2E8B57;
-    --lg: #c9ceae;
-    --ag: #98b382;
 
 }
 
@@ -23,24 +20,6 @@
 a { 
     text-decoration: none;
     transition: ease-in 200ms;
-}
-
-input {
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-button {
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: var(--ag);
-    color: var(--bc);
-}
-
-button:hover {
-    background-color: var(--g);
 }
 
 body {
@@ -59,9 +38,11 @@ body {
 }
 
 .logo {
-    top: 10px;
-    left: 10px;
     position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
 
     width: fit-content;
     background-color: var(--bc);
@@ -94,29 +75,27 @@ body {
 .part {
     background-color: var(--bc);
     display: flex;
-    width: 50%;
+    width: fit-content;
+    flex-direction: column;
     text-align: center;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
 }
-
-#main-menu {
-    flex-direction: column;
-    min-width: fit-content;
-}
-
 
 .part button {
+    border: none;
+    background-color: var(--a);
+    color: var(--bc);
+    padding: 10px;
+    border-radius: 10px;
     transition: ease-in 100ms;
     margin-top: 20px;
 }
 .part button:hover {
-    transform: scale(1.04);
+    transform: scale(1.1);
     border: none;
+    background-color: var(--c);
     color: var(--bc);
     padding: 10px;
     border-radius: 15px;
@@ -125,6 +104,7 @@ body {
 
 .part .l {
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: space-between;
     gap: 40px;
@@ -144,11 +124,14 @@ body {
     color: var(--bc);
     width: 100%;
     background-image: url(src/imgs/bfbackground.jpg);
-    height: 400px;
+    height: 200px;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.banner h1 {
+    display: none;
 }
 
 .torso {
@@ -162,24 +145,31 @@ body {
     justify-content: center;
     margin-bottom: 20px;
     gap: 20px;
+    width: 100%;
 }
 
 .seg h1 {
     font-size: 48px;
+    
 }
 
 .coll {
-    width: 80%;
+
+    width: 100%;
     display: flex;
-    flex-direction: row; 
-    justify-content: space-around;
+    flex-direction: row;
+    overflow-x: scroll;
+    gap: 20px;
+    margin: 20px;
 }
+
+
 
 .coll a {
     color: var(--bc);
     position: relative;
-    width: 256px;
-    height: 256px;
+    min-width: 256px;
+    min-height: 256px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -198,16 +188,18 @@ body {
 }
 
 .coll a:hover div {
-    transform: scale(1.2);
     border: 2px #000;
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
     transition: ease-in 100ms;
+    
 }
 
-.coll a:hover h3 {
+.coll a h3 {
     z-index: 1;
-    transition: ease-in 100ms;
+    transition: ease-in 100ms;    
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
 }
 
 
@@ -236,7 +228,9 @@ body {
 
 
 .txt {
+
     margin: 20px 0;
+    margin-top: 100px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -253,100 +247,4 @@ body {
 .txt p {
     width: 80%;
     font-size: 1.2em;
-}
-
-.spalt {
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 20px;
-}
-
-.spalt .post {
-    width: 80%;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-}
-
-.spalt .post h1 {
-    border-bottom: solid 2px rgba(0, 0, 0, 0.2);
-    font-size: 1.5em;
-}
-
-.cover {
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bc);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.cover .in form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-}
-.cover .in form button {
-    width: 100%;
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: var(--ag);
-    color: var(--bc);
-}
-.cover .in form button:hover {
-    background-color: var(--g);
-}
-
-.cover .in form input {
-    width: 100%;
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-.write-news {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.write-news div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.write-news label {
-    width: 100%;
-    margin-left: 40px;
-}
-
-.write-news div input {
-    width: 80%;
-    padding: 10px;
-}
-
-.write-news #content {
-    width: 80%;
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
 }

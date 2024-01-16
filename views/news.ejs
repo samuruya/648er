@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% if (iM) { %>
+        <link rel="stylesheet" href="mobile.css">
+    <% } else { %>
+        <link rel="stylesheet" href="style.css">
+    <% } %>
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="/">
+            <div class="logo">
+                <img class="logoI" src="src/648erbahn.png" alt="" srcset="">
+            </div>
+        </a>
+    </div>
+    <div class="banner">
+        <div>
+            <h1>648</h1>
+        </div>  
+    </div>
+    <div class="torso">
+        <div class="seg">
+            <h1>News</h1>
+            <div class="spalt">
+                <% for (let i = 0; i < news.length; i++) { %>
+                    <div class="post">
+                        <h1><%= news[i].title %></h1>
+                        <p><%= news[i].content %></p>
+                        <h5><%= news[i].autor %></h5>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+        <div class="seg">
+            
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="pop.js">
+
+</script>

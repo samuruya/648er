@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    
+    <% if (iM) { %>
+        <link rel="stylesheet" href="mobile.css">
+        <link rel="stylesheet" href="istyle.css">
+    <% } else { %>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="istyle.css">
+    <% } %>
     <title>Document</title>
 </head>
 <body>
+
     <div class="intro">
-        <div>
-            
-        </div>  
+        <div class="part" id="main-menu">
+            <div>
+                <img class="bigLogo" src="src/648erbahn.png" alt="">
+            </div>
+            <div class="l">
+                <a href="/n">PROJECTS</a>
+                <a href="/s">COLLECTIONS</a>
+                <a href="/p">VISIONS</a>
+            </div>
+        </div>
     </div>
-    
+
 </body>
 </html>
 <script src="pop.js">
